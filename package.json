@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/BackendExpert/automate-backend-fullstack/issues"
   },
-  "homepage": "https://github.com/BackendExpert/automate-backend-fullstack#readme"
+  "homepage": "https://github.com/BackendExpert/automate-backend-fullstack#readme",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "inquirer": "^6.0.0",
+    "yargs": "^17.7.2"
+  }
 }
