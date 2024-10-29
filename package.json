@@ -1,0 +1,25 @@
+{
+  "name": "automate-backend-fullstack",
+  "version": "1.0.0",
+  "description": "Automate MVC ",
+  "main": "src/index.js",
+  "bin": {
+    "create-mvc-fullstack" : "src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BackendExpert/automate-backend-fullstack.git"
+  },
+  "keywords": [
+    "FullStack"
+  ],
+  "author": "jehankandy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BackendExpert/automate-backend-fullstack/issues"
+  },
+  "homepage": "https://github.com/BackendExpert/automate-backend-fullstack#readme"
+}
