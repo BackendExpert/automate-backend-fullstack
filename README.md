@@ -15,4 +15,12 @@
 - <b>Automatic Model Generation:</b>  Creates a Mongoose model file in a structured format. Avoids Redundant Model Creation:
 - <b>Avoids Redundant Model Creation:</b>  Checks if a model with the specified name already exists and prompts to confirm overwriting, saving you from recreating existing models.
 
+## Installation
 
+- To use this package as a global CLI tool, install it using:
+
+```bash
+
+    npm install -g automate-backend-fullstack 
+
+```
