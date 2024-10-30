@@ -35,3 +35,15 @@
     npx create-mvc-fullstack 
 
 ```
+
+## Step-by-Step Process
+
+- <b>Run the Command: </b> After running `npx create-mvc-fullstack`  you’ll be prompted for the model details.
+- <b>Specify the Model Name:</b> Enter the name for your model (e.g., User, Product). If a model with this name already exists, you’ll be prompted to overwrite it or skip creation.
+- <b>Define Field Count: </b> Specify the number of fields the model will have.
+- <b>Enter Field Details:</b> For each field, you’ll be prompted for:
+- - Field Name: Name of the field (e.g., email, username).
+- - Field Type: Data type of the field (e.g., String, Number).
+- - Unique: Whether the field should be unique (true or false).
+- - Required: Whether the field is required (true or false).
+- - Default Value: Optional default value for the field (leave blank if not required).
