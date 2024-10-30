@@ -12,4 +12,7 @@
 
 - <b>Interactive CLI:</b> Prompts for model name, number of fields, and details for each field.
 - <b>Flexible Field Options:</b> Supports field configurations including type, unique, required, and default value.
-- <b>Automatic Model Generation:</b>  Creates a Mongoose model file in a structured format.
+- <b>Automatic Model Generation:</b>  Creates a Mongoose model file in a structured format. Avoids Redundant Model Creation:
+- <b>Avoids Redundant Model Creation:</b>  Checks if a model with the specified name already exists and prompts to confirm overwriting, saving you from recreating existing models.
+
+
