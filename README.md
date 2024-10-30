@@ -72,3 +72,11 @@ const UserSchema = new mongoose.Schema({
 module.exports = mongoose.model("User", UserSchema);
 
 ```
+
+
+## Notes
+
+- The default property is only added if specified; otherwise, it’s omitted.
+- Avoids redundant model creation by confirming overwrites for existing models.
+- Ensure `mongoose` is installed in your project to use the generated models.
+
