@@ -14,7 +14,10 @@
     "url": "git+https://github.com/BackendExpert/automate-backend-fullstack.git"
   },
   "keywords": [
-    "FullStack"
+    "FullStack",
+    "JavaScript",
+    "MVC",
+    "MERN"
   ],
   "author": "jehankandy",
   "license": "ISC",
