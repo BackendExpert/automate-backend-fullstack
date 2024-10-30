@@ -47,3 +47,28 @@
 - - Unique: Whether the field should be unique (true or false).
 - - Required: Whether the field is required (true or false).
 - - Default Value: Optional default value for the field (leave blank if not required).
+
+## Example
+
+- If you specify a model name as `User` with two fields (email and username), the generated schema file will look like this:
+
+
+```js
+
+const mongoose = require("mongoose");
+
+const UserSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        unique: true,
+        required: true
+    },
+    username: {
+        type: String,
+        required: true
+    }
+});
+
+module.exports = mongoose.model("User", UserSchema);
+
+```
