@@ -24,3 +24,14 @@
     npm install -g automate-backend-fullstack 
 
 ```
+
+## Usage
+
+- To create a new model, simply run:
+
+
+```bash
+
+    npx create-mvc-fullstack 
+
+```
