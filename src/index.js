@@ -10,6 +10,8 @@ async function createModel() {
         { type: "confirm", name: "timestamp", message: "Need to add Timestamp on Model?"}
     ]);
 
+    CreateController(modelName)
+
     const fields = [];
     for (let i = 0; i < fieldCount; i++) {
         const field = await inquirer.prompt([
@@ -55,6 +57,21 @@ module.exports = mongoose.model("${modelName}", ${modelName}Schema);
     fs.ensureDirSync(modelDir);
     fs.writeFileSync(`${modelDir}/${modelName}.js`, modelContent);
     console.log(`Model ${modelName} created successfully!`);
+}
+
+
+async function CreateController(ControllerName) {
+    
+    const ControllerConect = `
+const ${ControllerName} = require("../models/${ControllerName}");
+
+const ${ControllerName}Controller = {
+    // body of controller goese here
+    // create methods in here that you need to create
+};
+
+module.exports = ${ControllerName}Controller;
+`;
 }
 
 
