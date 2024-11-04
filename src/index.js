@@ -78,33 +78,25 @@ module.exports = ${ControllerName}Controller;
 
 const ControllerDir = `./controllers`;
 fs.ensureDirSync(ControllerDir);
-fs.writeFileSync(`${ControllerDir}/${ControllerName}.js`, ControllerConect);
-console.log(`Controller ${ControllerName} created successfully!`);
+fs.writeFileSync(`${ControllerDir}/${ControllerName}Controller.js`, ControllerConect);
+console.log(`${ControllerName} Controller created successfully! Route will be Created on Next Release`);
 
 }
 
 
 async function CreateControllerAndRouteForModel(ModelName) {
     try{
-        const ControllerandRoute = await inquirer.prompt([
+        const { controllerChoice } = await inquirer.prompt([
             {
                 type: 'list',
-                name: 'Controller',
+                name: 'controllerChoice',
                 message: 'Need to create Controller according to Model ? :',
                 choices: ['Yes (Create Controller According to you give name as model)', 'No'],
-            },
-            {
-                type: 'list',
-                name: 'Route',
-                message: 'Need to create Route according to Model ? :',
-                choices: ['Yes (Create Route According to you give name as model)', 'No'],
             }
         ]);
 
-        
-        const { Controller, Route } = ControllerandRoute;
 
-        if (Controller === "Yes (Create Controller according to model name)") {
+        if (controllerChoice === "Yes (Create Controller According to you give name as model)") {
             await CreateController(ModelName);
         }
     }
@@ -115,7 +107,7 @@ async function CreateControllerAndRouteForModel(ModelName) {
 
 async function main() {
     await createModel()
-    
+
 }
 
 main()
