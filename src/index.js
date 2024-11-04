@@ -57,7 +57,7 @@ module.exports = mongoose.model("${modelName}", ${modelName}Schema);
     fs.writeFileSync(`${modelDir}/${modelName}.js`, modelContent);
     console.log(`Model ${modelName} created successfully!`);
 
-    CreateControllerAndRouteForModel(modelName)
+    await CreateControllerAndRouteForModel(modelName)
 
 }
 
@@ -101,20 +101,12 @@ async function CreateControllerAndRouteForModel(ModelName) {
             }
         ]);
 
+        
         const { Controller, Route } = ControllerandRoute;
 
-        switch(Controller){
-            case "Yes (Create Controller According to you give name as model)":
-                await CreateController(ModelName)
-                break;
-            
-            case "No":
-                break;
-
-            default: 
-                console.log('Invalied Option')
+        if (Controller === "Yes (Create Controller according to model name)") {
+            await CreateController(ModelName);
         }
-
     }
     catch(error){
         console.error(`An error occurred: ${error.message}`);
@@ -123,7 +115,7 @@ async function CreateControllerAndRouteForModel(ModelName) {
 
 async function main() {
     await createModel()
-    await CreateControllerAndRouteForModel()
+    
 }
 
 main()
