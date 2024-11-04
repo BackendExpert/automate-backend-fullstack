@@ -73,11 +73,44 @@ module.exports = mongoose.model("User", UserSchema);
 
 ```
 
+- Example Controller
+
+
+```js
+
+// this user model can be changed
+const user = require("../models/user");
+
+// Controller name can be changed
+const userController = {
+    // body of controller goese here
+    // create methods in here that you need to create
+};
+
+module.exports = userController;
+
+
+```
+
+
 
 ## Notes
 
 - The default property is only added if specified; otherwise, it’s omitted.
-- Avoids redundant model creation by confirming overwrites for existing models.
+- Avoids redundant model and controller creation by confirming overwrites for existing.
 - Ensure `mongoose` is installed in your project to use the generated models.
 - More fuctions will be add in Future Releases.
+
+## Releases
+
+### v1.0.0 30 October 2024
+
+- inital release
+- Adding only Model
+
+### v2.0.0 04 November 2024
+
+- Adding Controllers
+- fixing bugs on model
+
 
