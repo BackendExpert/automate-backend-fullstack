@@ -6,7 +6,7 @@
   </a>
 </p>
 
-- `automate-backend-fullstack` is an npm package that helps you quickly set up a MongoDB model in a Node.js MVC backend using the Mongoose ORM. This CLI tool allows you to specify model details, including field types, uniqueness, requirements, and default values, creating a ready-to-use Mongoose schema.
+- `automate-backend-fullstack` is an npm package that helps you quickly set up a MongoDB model and Controller in a Node.js MVC backend using the Mongoose ORM. This CLI tool allows you to specify model details, including field types, uniqueness, requirements, and default values, creating a ready-to-use Mongoose schema.
 
 ## Features
 
