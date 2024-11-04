@@ -15,6 +15,9 @@
 - <b>Automatic Model Generation:</b>  Creates a Mongoose model file in a structured format. Avoids Redundant Model Creation:
 - <b>Avoids Redundant Model Creation:</b>  Checks if a model with the specified name already exists and prompts to confirm overwriting, saving you from recreating existing models.
 
+
+- <b> About Controller : </b> This npm package helps to create Controllers after create models. According to this Controller created using given name for model
+
 ## Installation
 
 - To use this package as a global CLI tool, install it using:
