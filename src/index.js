@@ -80,20 +80,24 @@ async function main() {
     createModel()
 
     try{
-        const answers = await inquirer.prompt([
+        const ControllerandRoute = await inquirer.prompt([
             {
                 type: 'list',
-                name: 'selection1',
+                name: 'Controller',
                 message: 'Need to create Controller according to Model ? :',
                 choices: ['Yes', 'No'],
             },
             {
                 type: 'list',
-                name: 'selection2',
+                name: 'Route',
                 message: 'Need to create Route according to Model ? :',
-                choices: ['Using MySQL without MVC', 'Using MySQL with MVC', 'Using MongoDB with MVC (Recommended)'],
+                choices: ['Yes', 'No'],
             }
         ]);
+
+        const { Controller, Route } = ControllerandRoute;
+
+        
     }
     catch(error){
         console.error(`An error occurred: ${error.message}`);
