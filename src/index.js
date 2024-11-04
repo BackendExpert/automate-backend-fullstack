@@ -57,4 +57,31 @@ module.exports = mongoose.model("${modelName}", ${modelName}Schema);
     console.log(`Model ${modelName} created successfully!`);
 }
 
-createModel();
+
+async function main() {
+    
+    createModel()
+
+    try{
+        const answers = await inquirer.prompt([
+            {
+                type: 'list',
+                name: 'selection1',
+                message: 'Need to create Controller according to Model ? :',
+                choices: ['Yes', 'No'],
+            },
+            {
+                type: 'list',
+                name: 'selection2',
+                message: 'Select Your BackEnd End :',
+                choices: ['Using MySQL without MVC', 'Using MySQL with MVC', 'Using MongoDB with MVC (Recommended)'],
+            }
+        ]);
+    }
+    catch(error){
+        console.error(`An error occurred: ${error.message}`);
+    }
+}
+
+
+main()
