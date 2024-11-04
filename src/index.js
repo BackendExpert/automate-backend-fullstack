@@ -85,19 +85,19 @@ async function main() {
                 type: 'list',
                 name: 'Controller',
                 message: 'Need to create Controller according to Model ? :',
-                choices: ['Yes', 'No'],
+                choices: ['Yes (Create Controller According to you give name as model)', 'No'],
             },
             {
                 type: 'list',
                 name: 'Route',
                 message: 'Need to create Route according to Model ? :',
-                choices: ['Yes', 'No'],
+                choices: ['Yes (Create Route According to you give name as model)', 'No'],
             }
         ]);
 
         const { Controller, Route } = ControllerandRoute;
 
-        
+
     }
     catch(error){
         console.error(`An error occurred: ${error.message}`);
