@@ -10,7 +10,6 @@ async function createModel() {
         { type: "confirm", name: "timestamp", message: "Need to add Timestamp on Model?"}
     ]);
 
-    CreateController(modelName)
 
     const fields = [];
     for (let i = 0; i < fieldCount; i++) {
@@ -57,6 +56,9 @@ module.exports = mongoose.model("${modelName}", ${modelName}Schema);
     fs.ensureDirSync(modelDir);
     fs.writeFileSync(`${modelDir}/${modelName}.js`, modelContent);
     console.log(`Model ${modelName} created successfully!`);
+
+    CreateControllerAndRouteForModel(modelName)
+
 }
 
 
@@ -72,13 +74,17 @@ const ${ControllerName}Controller = {
 
 module.exports = ${ControllerName}Controller;
 `;
+
+
+const ControllerDir = `./controllers`;
+fs.ensureDirSync(ControllerDir);
+fs.writeFileSync(`${ControllerDir}/${ControllerName}.js`, ControllerConect);
+console.log(`Controller ${ControllerName} created successfully!`);
+
 }
 
 
-async function main() {
-    
-    createModel()
-
+async function CreateControllerAndRouteForModel(ModelName) {
     try{
         const ControllerandRoute = await inquirer.prompt([
             {
@@ -97,6 +103,17 @@ async function main() {
 
         const { Controller, Route } = ControllerandRoute;
 
+        switch(Controller){
+            case "Yes (Create Controller According to you give name as model)":
+                await CreateController(ModelName)
+                break;
+            
+            case "No":
+                break;
+
+            default: 
+                console.log('Invalied Option')
+        }
 
     }
     catch(error){
@@ -104,5 +121,9 @@ async function main() {
     }
 }
 
+async function main() {
+    await createModel()
+    await CreateControllerAndRouteForModel()
+}
 
 main()
