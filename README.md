@@ -48,6 +48,9 @@
 - - Required: Whether the field is required (true or false).
 - - Default Value: Optional default value for the field (leave blank if not required).
 
+- After Model Create then you can create Controller
+- - after creating of model it automatically ask to create Controller using given name for model
+
 ## Example
 
 - If you specify a model name as `User` with two fields (email and username), the generated schema file will look like this:
