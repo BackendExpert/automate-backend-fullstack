@@ -83,8 +83,8 @@ console.log(`${ControllerName} Controller created successfully! Route will be Cr
 
 }
 
-async function CreateRoute (ModelName){
-    const ControllerConect = `
+async function CreateRoute (RouteName){
+    const RouteContent = `
 
 const express = require('express');
 const AuthController = require('../Controllers/AuthController');
@@ -94,6 +94,12 @@ const router = express.Router();
 module.exports = router;
 
     `;
+
+    const RouteDir = `./route`;
+    fs.ensureDirSync(RouteDir);
+    fs.writeFileSync(`${RouteDir}/${RouteName}Controller.js`, RouteContent);
+    console.log(`${RouteContent} Model created successfully!`);
+
 }
 
 
