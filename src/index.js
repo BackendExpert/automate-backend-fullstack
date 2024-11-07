@@ -127,7 +127,7 @@ async function CreateControllerAndRouteForModel(ModelName) {
         }
 
         if (RouteChoice === "Yes (Create Route According to you give name as model)") {
-            // await CreateController(ModelName);
+            await CreateRoute(ModelName);
         }
     }
     catch(error){
@@ -137,7 +137,6 @@ async function CreateControllerAndRouteForModel(ModelName) {
 
 async function main() {
     await createModel()
-
 }
 
 main()
