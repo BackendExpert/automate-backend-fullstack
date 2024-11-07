@@ -79,25 +79,55 @@ module.exports = ${ControllerName}Controller;
 const ControllerDir = `./controllers`;
 fs.ensureDirSync(ControllerDir);
 fs.writeFileSync(`${ControllerDir}/${ControllerName}Controller.js`, ControllerConect);
-console.log(`${ControllerName} Controller created successfully! Route will be Created on Next Release`);
+console.log(`${ControllerName} Controller created successfully!`);
+
+}
+
+async function CreateRoute (RouteName){
+    const RouteContent = `
+
+const express = require('express');
+const ${RouteName}Controller = require('../controllers/${RouteName}Controller');
+
+const router = express.Router();
+
+module.exports = router;
+
+    `;
+
+    const RouteDir = `./route`;
+    fs.ensureDirSync(RouteDir);
+    fs.writeFileSync(`${RouteDir}/${RouteName}Route.js`, RouteContent);
+    console.log(`${RouteName} Route created successfully!`);
 
 }
 
 
 async function CreateControllerAndRouteForModel(ModelName) {
     try{
-        const { controllerChoice } = await inquirer.prompt([
+        const { controllerChoice, RouteChoice } = await inquirer.prompt([
             {
                 type: 'list',
                 name: 'controllerChoice',
                 message: 'Need to create Controller according to Model ? :',
                 choices: ['Yes (Create Controller According to you give name as model)', 'No'],
+            },
+
+            {
+                type: 'list',
+                name: 'RouteChoice',
+                message: 'Need to create Route according to Model ? :',
+                choices: ['Yes (Create Route According to you give name as model)', 'No'],
             }
         ]);
 
 
         if (controllerChoice === "Yes (Create Controller According to you give name as model)") {
             await CreateController(ModelName);
+        }
+
+        if (RouteChoice === "Yes (Create Route According to you give name as model)") {
+            await CreateRoute(ModelName);
         }
     }
     catch(error){
@@ -107,7 +137,6 @@ async function CreateControllerAndRouteForModel(ModelName) {
 
 async function main() {
     await createModel()
-
 }
 
 main()

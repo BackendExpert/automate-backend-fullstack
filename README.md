@@ -6,7 +6,7 @@
   </a>
 </p>
 
-- `automate-backend-fullstack` is an npm package that helps you quickly set up a MongoDB model and Controller in a Node.js MVC backend using the Mongoose ORM. This CLI tool allows you to specify model details, including field types, uniqueness, requirements, and default values, creating a ready-to-use Mongoose schema.
+- `automate-backend-fullstack` is an npm package that helps you quickly set up a MongoDB model, Controller and Route in a Node.js MVC backend using the Mongoose ORM. This CLI tool allows you to specify model details, including field types, uniqueness, requirements, and default values, creating a ready-to-use Mongoose schema.
 
 ## Features
 
@@ -17,6 +17,8 @@
 
 
 - <b> About Controller : </b> This npm package helps to create Controllers after create models. According to this Controller created using given name for model
+
+- <b> About Route : </b> This npm package helps to create Routes after create models and Controllers. According to this Route created using given name for model
 
 ## Installation
 
@@ -52,7 +54,7 @@
 - - Default Value: Optional default value for the field (leave blank if not required).
 
 - After Model Create then you can create Controller
-- - after creating of model it automatically ask to create Controller using given name for model
+- - after creating of model it automatically ask to create Controller and Route using given name for model
 
 ## Example
 
@@ -98,12 +100,34 @@ module.exports = userController;
 
 ```
 
+- Example Route
+
+
+```js
+
+
+// impoert express
+const express = require('express');
+
+// import Controller
+const userController = require('../controllers/userController');
+
+const router = express.Router();
+
+// All routes goes here
+
+module.exports = router;
+
+    
+
+
+```
 
 
 ## Notes
 
 - The default property is only added if specified; otherwise, it’s omitted.
-- Avoids redundant model and controller creation by confirming overwrites for existing.
+- Avoids redundant model, controller and route creation by confirming overwrites for existing.
 - Ensure `mongoose` is installed in your project to use the generated models.
 - More fuctions will be add in Future Releases.
 
@@ -118,5 +142,11 @@ module.exports = userController;
 
 - Adding Controllers
 - fixing bugs on model
+
+### v3.0.0 07 November 2024
+
+- Adding Routes
+- fixing bugs on model and Controllers
+
 
 
