@@ -87,7 +87,7 @@ async function CreateRoute (RouteName){
     const RouteContent = `
 
 const express = require('express');
-const ${RouteName}Controller = require('../Controllers/${RouteName}Controller');
+const ${RouteName}Controller = require('../controllers/${RouteName}Controller');
 
 const router = express.Router();
 
@@ -98,7 +98,7 @@ module.exports = router;
     const RouteDir = `./route`;
     fs.ensureDirSync(RouteDir);
     fs.writeFileSync(`${RouteDir}/${RouteName}Route.js`, RouteContent);
-    console.log(`${RouteContent} Route created successfully!`);
+    console.log(`${RouteName} Route created successfully!`);
 
 }
 

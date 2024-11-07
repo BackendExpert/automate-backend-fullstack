@@ -98,6 +98,26 @@ module.exports = userController;
 
 ```
 
+- Example Route
+
+
+```js
+
+
+// impoert express
+const express = require('express');
+
+// import Controller
+const userController = require('../controllers/userController');
+
+const router = express.Router();
+
+module.exports = router;
+
+    
+
+
+```
 
 
 ## Notes
