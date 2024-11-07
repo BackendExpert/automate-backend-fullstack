@@ -79,7 +79,7 @@ module.exports = ${ControllerName}Controller;
 const ControllerDir = `./controllers`;
 fs.ensureDirSync(ControllerDir);
 fs.writeFileSync(`${ControllerDir}/${ControllerName}Controller.js`, ControllerConect);
-console.log(`${ControllerName} Controller created successfully! Route will be Created on Next Release`);
+console.log(`${ControllerName} Controller created successfully!`);
 
 }
 
@@ -87,7 +87,7 @@ async function CreateRoute (RouteName){
     const RouteContent = `
 
 const express = require('express');
-const AuthController = require('../Controllers/AuthController');
+const ${RouteName}Controller = require('../Controllers/${RouteName}Controller');
 
 const router = express.Router();
 
@@ -97,8 +97,8 @@ module.exports = router;
 
     const RouteDir = `./route`;
     fs.ensureDirSync(RouteDir);
-    fs.writeFileSync(`${RouteDir}/${RouteName}Controller.js`, RouteContent);
-    console.log(`${RouteContent} Model created successfully!`);
+    fs.writeFileSync(`${RouteDir}/${RouteName}Route.js`, RouteContent);
+    console.log(`${RouteContent} Route created successfully!`);
 
 }
 
