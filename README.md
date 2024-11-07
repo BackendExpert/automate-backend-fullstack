@@ -112,6 +112,8 @@ const userController = require('../controllers/userController');
 
 const router = express.Router();
 
+// All routes goes here
+
 module.exports = router;
 
     
