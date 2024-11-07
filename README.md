@@ -146,7 +146,7 @@ module.exports = router;
 ### v3.0.0 07 November 2024
 
 - Adding Routes
-- fixing bugs on model and Conrollers
+- fixing bugs on model and Controllers
 
 
 
