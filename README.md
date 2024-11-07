@@ -18,6 +18,8 @@
 
 - <b> About Controller : </b> This npm package helps to create Controllers after create models. According to this Controller created using given name for model
 
+- <b> About Route : </b> This npm package helps to create Routes after create models and Controllers. According to this Route created using given name for model
+
 ## Installation
 
 - To use this package as a global CLI tool, install it using:
