@@ -86,18 +86,29 @@ console.log(`${ControllerName} Controller created successfully! Route will be Cr
 
 async function CreateControllerAndRouteForModel(ModelName) {
     try{
-        const { controllerChoice } = await inquirer.prompt([
+        const { controllerChoice, RouteChoice } = await inquirer.prompt([
             {
                 type: 'list',
                 name: 'controllerChoice',
                 message: 'Need to create Controller according to Model ? :',
                 choices: ['Yes (Create Controller According to you give name as model)', 'No'],
+            },
+
+            {
+                type: 'list',
+                name: 'RouteChoice',
+                message: 'Need to create Route according to Model ? :',
+                choices: ['Yes (Create Route According to you give name as model)', 'No'],
             }
         ]);
 
 
         if (controllerChoice === "Yes (Create Controller According to you give name as model)") {
             await CreateController(ModelName);
+        }
+
+        if (RouteChoice === "Yes (Create Route According to you give name as model)") {
+            // await CreateController(ModelName);
         }
     }
     catch(error){
