@@ -1,6 +1,6 @@
 {
   "name": "automate-backend-fullstack",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Automate MVC of the Backend FullStack Projects",
   "main": "src/index.js",
   "bin": {
