@@ -83,6 +83,13 @@ console.log(`${ControllerName} Controller created successfully! Route will be Cr
 
 }
 
+async function(ModelName){
+    const ControllerConect = `
+        
+
+    `;
+}
+
 
 async function CreateControllerAndRouteForModel(ModelName) {
     try{
